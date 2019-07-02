@@ -1,5 +1,4 @@
 # Kudan Tutorials - ArbiTrack Basics
--
 
 This tutorial will go through the basics of using Kudan's ArbiTrack class. This will lead on from our tutorial which described how to add content to a marker.  If you have not already set up a project where you place content onto a marker, we suggest you check it out before going any further.
 
