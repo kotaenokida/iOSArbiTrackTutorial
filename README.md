@@ -1,4 +1,4 @@
-#Kudan Tutorials - ArbiTrack Basics
+# Kudan Tutorials - ArbiTrack Basics
 -
 
 This tutorial will go through the basics of using Kudan's ArbiTrack class. This will lead on from our tutorial which described how to add content to a marker.  If you have not already set up a project where you place content onto a marker, we suggest you check it out before going any further.
@@ -11,11 +11,15 @@ For this sample we have used:
 
 Which can all be downloaded [here](assets.zip).
 
-###Initial Setup
+## Instructions
+
+- Download the Kudan AR iOS SDK at the [XLsoft Kudan Download Page](https://www.xlsoft.com/en/products/kudan/download.html)
+- Drop the `KudanAR.framework` into your root project directory
+- Build and run the XCode project
 
 Before you can use ArbiTrack you will need to set up an Android/iOS project with an ARActivity/ARCameraViewController. 
 
-###Initialise ArbiTrack And Gyro Placer
+## Initialise ArbiTrack And Gyro Placer
 
 ArbiTrack and the Gyro placer will need to be initialised before they can be used. As ArbiTrack and Gyro placer are singletons they can be called using getInstance from anywhere in the program. The gyro placer uses your device’s gyro to position a node and ArbiTrack locks your model in place instantly, by keeping track of arbitrary feature points.
 
@@ -31,7 +35,7 @@ ARGyroPlaceManager *gyroPlaceManager = [ARGyroPlaceManager getInstance];
 [gyroPlaceManager initialise]; 
 ~~~
 
-###Create Target Node
+## Create Target Node
 To position your model you will need to use a target node. As the target node’s position is altered by the GyroPlacer it is useful to have a graphical representation of where the target node is. We have used an image although using the same model is also possible. 
 
 ~~~objectivec
@@ -47,7 +51,7 @@ ARImageNode *targetImageNode = [[ARImageNode alloc] initWithImage:[UIImage image
 arbiTrack.targetNode = targetImageNode;
 ~~~
 
-###Start ArbiTrack
+## Start ArbiTrack
 
 Starting ArbiTrack will lock your model in place. You may also wish to hide your target node as it will not reposition your model until ArbiTrack has been stopped.
 
@@ -62,7 +66,7 @@ arbiTrack.targetNode.visible = NO;
 __arbiButtonState = ARBI_TRACKING;
 ~~~
 
-###Stopping ArbiTrack
+## Stopping ArbiTrack
 
 You may wish to reposition your model in order to do this you will need to stop ArbiTrack and reveal your target node. You can restart ArbiTrack after this and your model will be locked to new possition of the target node.
 
@@ -79,3 +83,5 @@ arbiTrack.targetNode.visible = YES;
 __arbiButtonState = ARBI_PLACEMENT;
 
 ~~~
+
+If you have futher questions regarding the SDK or documentation, please refer to the [XLsoft Kudan Developer Hub](https://www.xlsoft.com/doc/kudan/getting-started/)
